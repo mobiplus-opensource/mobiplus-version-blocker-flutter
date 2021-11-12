@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
-import 'package:version_blocker_flutter/exceptions/exceptions.imports.dart';
+import 'package:version_blocker_flutter/exceptions/exceptions_imports.dart';
 
 class BlockApp {
   BlockApp._();
