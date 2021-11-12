@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 import 'package:version_blocker_flutter/exceptions/exceptions.imports.dart';
 
@@ -15,12 +16,28 @@ class BlockApp {
     return _instance;
   }
 
-  void block(String build) {
+  void block(String build, BuildContext context) {
     build.trim();
     if (build.isEmpty) throw BuildEmptyException();
     if (!build.contains(_regexContainsOnlyNumbers)) throw BuildWrongFormat();
-    if (build.compareTo(_buildApp) == 0) _blockAppAction();
+    if (build.compareTo(_buildApp) == 0) _blockAppAction(context);
   }
 
-  void _blockAppAction() {}
+  void showViewBlock(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => Scaffold(
+          body: WillPopScope(
+            onWillPop: () async => false,
+            child: const Center(
+              child: Text("data"),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _blockAppAction(BuildContext context) => showViewBlock(context);
 }
