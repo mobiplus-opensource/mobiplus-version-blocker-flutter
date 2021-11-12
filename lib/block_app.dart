@@ -1,17 +1,24 @@
-import 'dart:io';
+import 'package:package_info/package_info.dart';
+import 'package:version_blocker_flutter/exceptions/exceptions.imports.dart';
 
 class BlockApp {
   BlockApp._();
 
-  static BlockApp get instance => BlockApp._();
+  static late final PackageInfo _info;
+  static final BlockApp _instance = BlockApp._();
 
-  String get _buildApp => Platform.version.split("+").last.trim();
+  String get _buildApp => _info.buildNumber;
+  RegExp get _regexContainsOnlyNumbers => RegExp(r"^[0-9]+$");
+
+  static Future<BlockApp> init() async {
+    _info = await PackageInfo.fromPlatform();
+    return _instance;
+  }
 
   void block(String build) {
     build.trim();
-    // TODO: add validacao de numeracao correta
-    // TODO: add exceptions
-    if (build.isEmpty) return;
+    if (build.isEmpty) throw BuildEmptyException();
+    if (!build.contains(_regexContainsOnlyNumbers)) throw BuildWrongFormat();
     if (build.compareTo(_buildApp) == 0) _blockAppAction();
   }
 
