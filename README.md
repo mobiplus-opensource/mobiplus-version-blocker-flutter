@@ -1,10 +1,14 @@
-## Introdução :globe_with_meridians:
+## Introduction :globe_with_meridians:
+This repository contains a lib where the aim is to provide an easy way to implement and customize "Version Locks"
 
-Texto de apresentação da lib.
+## Let's begin :wrench:
 
-## Vamos começar :wrench:
+what is it possible to do?
+- Lock the app
+- Give a message to display a custom message
+- Give the implementer the possibility to define a custom modal
 
-### Configuração inicial:
+### Initial configuration:
 
 ```dart
 import 'package:block_version/block_version.dart';
@@ -109,11 +113,11 @@ _appBlocker.blockScreenBuilder(
 );
 ```
 
-## Contribuindo :cupid:
+## Contributing :cupid:
 
 #421 - issue
 
-## Contribuintes :sparkles:
+## maintainers :sparkles:
 
 - [Tiago Silva](https://github.com/tigosante)
 - [Wellington Felisberto](https://github.com/WellingtonSilva1992)
