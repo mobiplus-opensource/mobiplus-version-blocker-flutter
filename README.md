@@ -1,5 +1,5 @@
 ## Introduction :globe_with_meridians:
-This repository contains a lib where the aim is to provide an easy way to implement and customize "Version Locks"
+This repository contains a lib where the aim is to provide an easy way to implement and customize "Version Blocker"
 
 ## Let's begin :wrench:
 
