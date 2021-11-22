@@ -1,123 +1,75 @@
-## Introduction :globe_with_meridians:
-This repository contains a lib where the aim is to provide an easy way to implement and customize "Version Blocker"
+# Welcome to Mobiplus Version Blocker repo!
 
-## Let's begin :wrench:
+Feel free to contact us to provide your feedback about anything.
+Let's talk and learn together.
 
-what is it possible to do?
-- Lock the app
-- Give a message to display a custom message
-- Give the implementer the possibility to define a custom modal
+## For who is the Version Blocker?
 
-### Initial configuration:
+Developers that don't likes to write duplicated solutions and that wants to invest your time to impacts your app products.
 
-```dart
-import 'package:block_version/block_version.dart';
+Product's people that needs solutions to manage app versions intelligently.
 
-final _appBlocker = AppBlocker.instance;
+## What problems the Version Blocker solves?
 
-// 'AppBlockerData' recebe uma versão ou build.
-// Caso os 2 sejam informados, a versão terá prioridade.
-_appBlocker.block(
-  AppBlockerData(
-    version: "1.5.0",
-  ),
-);
+Version Blocker intends to solve the following problems:
 
-// Caso não seja informada uma mensagem, será usado
-// um texto padrão: 'Por favor, atualize seu aplicativo!'
-_appBlocker.blockScreen(
-  onWillPop: () async => false,
-  message: Text("Por favor, atualize seu aplicativo!"),
-);
+- To suggest users to update old versions to new ones available.
 
-_appBlocker.start();
+## Motivation
+
+The members of our current team had developed many apps in the last 11 years,
+and in many cases we need to develop a similar boilerplate solution the proposed here.
+
+The features can vary a little bit, but we can consider that is possible to apply something like the Pareto's rule.
+20% of the needs variations are sufficient for 80% of the apps needs.
+
+## Features
+
+- a
+- b
+- c
+- d
+
+## Get started
+
+```yaml
+dependencies:
+  block_version: ^1.0.0
 ```
 
-### Métodos avançados:
+## Super simple to use
 
 ```dart
-// Recebe uma lista de versões.
-_appBlocker.listOfBlockedVersions(
-  [
-    AppBlockerData(
-      version: "1.1.0",
-    ),
-    AppBlockerData(
-      version: "1.3.0",
-    ),
-  ],
-);
-
-// Recebe uma lista de builds.
-_appBlocker.listOfBlockedBuilds(
-  [
-    AppBlockerData(
-      build: "21",
-    ),
-    AppBlockerData(
-      build: "34",
-    ),
-  ],
-);
-
-// Bloqueia versões ou builds maiores que.
-_appBlocker.blockBiggerThan(
-  AppBlockerData(
-    version: "1.0.0",
-  ),
-);
-
-// Bloqueia versões ou builds menores que.
-_appBlocker.blockLessThan(
-  AppBlockerData(
-    build: "33",
-  ),
-);
-
-// Bloqueia builds entre.
-_appBlocker.blockBuildsBetween([
-  AppBlockerData(
-    build: "20",
-  ),
-  AppBlockerData(
-    build: "35",
-  ),
-]);
-
-// Bloqueia versões entre.
-_appBlocker.blockVersionsBetween([
-  AppBlockerData(
-    version: "1.1.0",
-  ),
-  AppBlockerData(
-    version: "1.5.0",
-  ),
-]);
+code dart
 ```
 
-### Widget
+## Colaborating
 
-- **blockScreen:** Caso não seja informada uma mensagem, será usado um texto padrão: 'Por favor, atualize seu aplicativo!'.
+## How to run the sample
 
-- O parâmetro **onWillPop** tem o valor **() async => false** como padrão.
+- Instructions for creating a dev environment:
+  - https://docs.flutter.dev/get-started/install
+  - Open the project in an editor (IDE) of your choice.
+  - Run the command: `flutter pub get`.
+  - Open an emulator or connect a device.
+  - Run the command: `flutter run`.
+  - Have a good time.
+- Instructions on tool versions
+  - Flutter version: 2.5.3
+  - Dart Version: 2.14
+- Emulators, Devices
 
-```dart
-_appBlocker.blockScreen(
-  onWillPop: () async => false,
-  message: Text("Por favor, atualize seu aplicativo!"),
-);
+## How to contribute
 
-_appBlocker.blockScreenBuilder(
-  onWillPop: () async => false,
-  builder: (context, version, build) => MyWidget(),
-);
+Our repository has the following structure:
+
+NEEDS TO ADD STRUCTURE
+
+- ADD INSTRUCTIONS ABOUT "GOOD FIRST ISSUES"
+- ADD INSTRUCTIONS ABOUT PULL REQUESTS?
+- ADD INSTRUCTIONS ABOUT OPEN ISSUES
+- ADD INSTRUCTIONS ABOUT CODE OF CONDUCT
+
 ```
 
-## Contributing :cupid:
-
-#421 - issue
-
-## maintainers :sparkles:
-
-- [Tiago Silva](https://github.com/tigosante)
-- [Wellington Felisberto](https://github.com/WellingtonSilva1992)
+```
