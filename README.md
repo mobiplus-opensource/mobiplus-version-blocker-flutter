@@ -4,6 +4,11 @@ Feel free to contact us to provide your feedback about anything.
 We are always responsing the questions in discussion tab.
 Let's talk and learn together.
 
+Version Blocker intends to solve the following problems:
+
+- To suggest users to update old versions to new ones available.
+- For the developer, offering a simple and faster way of implement and personalize the message of version blocked
+
 ## For who is the Version Blocker?
 
 Developers that don't likes to write duplicated solutions and that wants to invest your time to impacts your app products.
@@ -11,11 +16,6 @@ Developers that don't likes to write duplicated solutions and that wants to inve
 Product's people that needs solutions to manage app versions intelligently.
 
 ## What problems the Version Blocker solves?
-
-Version Blocker intends to solve the following problems:
-
-- To suggest users to update old versions to new ones available.
-- For the developer, offering a simple and faster way of implement and personalize the message of version blocked
 
 ## Motivation
 
