@@ -27,22 +27,21 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 ## Features
 
-- Encapsulated locked screen display logic
+- Encapsulated blocked version screen display logic
 - Integration with realtime database to determine the blocked versions
-- Customizable text, color button and background color
+- Customizable text style in title, body and button
+- Customizable color button and background color
 
-## Get started
+<!-- ## Get started
 
 ```yaml
 dependencies:
   block_version: ^1.0.0
-```
+``` -->
 
 ## Super simple to use
 
-```dart
-code dart
-```
+***As soon as possible we will make available a sample with the implementation.***
 
 ## Colaborating
 
@@ -65,6 +64,8 @@ code dart
 Our repository has the following structure:
 
 NEEDS TO ADD STRUCTURE
+
+### Found a bug?
 
 - ADD INSTRUCTIONS ABOUT "GOOD FIRST ISSUES"
 - ADD INSTRUCTIONS ABOUT PULL REQUESTS?
