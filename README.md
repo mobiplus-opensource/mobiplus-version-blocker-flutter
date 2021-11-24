@@ -1,6 +1,7 @@
 # Welcome to Mobiplus Version Blocker repo!
 
 Feel free to contact us to provide your feedback about anything.
+We are always responsing the questions in discussion tab.
 Let's talk and learn together.
 
 ## For who is the Version Blocker?
@@ -14,6 +15,7 @@ Product's people that needs solutions to manage app versions intelligently.
 Version Blocker intends to solve the following problems:
 
 - To suggest users to update old versions to new ones available.
+- For the developer, offering a simple and faster way of implement and personalize the message of version blocked
 
 ## Motivation
 
@@ -25,10 +27,9 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 ## Features
 
-- a
-- b
-- c
-- d
+- Encapsulated locked screen display logic
+- Integration with realtime database to determine the blocked versions
+- Customizable text, color button and background color
 
 ## Get started
 
