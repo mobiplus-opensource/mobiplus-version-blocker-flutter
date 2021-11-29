@@ -25,7 +25,7 @@ and in many cases we need to develop a similar boilerplate solution the proposed
 The features can vary a little bit, but we can consider that is possible to apply something like the Pareto's rule.
 20% of the needs variations are sufficient for 80% of the apps needs.
 
-## Features
+# Features
 
 - Encapsulated blocked version screen display logic
 - Integration with realtime database to determine the blocked versions
@@ -43,7 +43,7 @@ dependencies:
 
 ***As soon as possible we will make available a sample with the implementation.***
 
-## Colaborating
+# Colaborating
 
 ## How to run the sample
 
@@ -61,7 +61,7 @@ dependencies:
 
 ## How to contribute
 
-Our repository has the following structure:
+We'd love you to contribute to Version Blocker Flutter.  please read our [Contribution Guide](CONTRIBUTING.md) and [Code of Conduct](https://github.com/mobiplus-opensource/mobiplus-version-blocker-flutter/blob/14d89e48bcb635e42559109675e4ff1de66404c4/CODE_OF_CONDUCT.md)
 
 NEEDS TO ADD STRUCTURE
 
