@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+class BlockScreen extends StatefulWidget {
+  const BlockScreen({Key? key}) : super(key: key);
+  final String titleText = "Tá na hora de atualizar seu aplicativo";
+  final String middleText = "Fizemos algumas atualizações desde a ultima vez por aqui";
+  final String bottomText = "Clica aí no botão para baixar a nova versão";
+  final String buttonText = "ATUALIZAR";
 
-class MyApp extends StatelessWidget {
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
+      home: const Scaffold(
+        body: Center(
           child: Text('Hello World'),
         ),
       ),
     );
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }
