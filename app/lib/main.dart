@@ -1,4 +1,4 @@
-import 'package:app/screens/block.screen.dart';
+import 'package:example/screens/block.screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp(titleText: '',
