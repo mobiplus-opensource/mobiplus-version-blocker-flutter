@@ -13,8 +13,7 @@ class BlockScreen extends StatefulWidget {
 
 class BlockScreenStates extends State<BlockScreen> {
   String titleText = 'Tá na hora de atualizar seu aplicativo';
-  final String middleText =
-      'Fizemos algumas atualizações desde a ultima vez por aqui.';
+  final String middleText = 'Fizemos algumas atualizações desde a última vez por aqui.';
   final String bottomText = 'Clica aí no botão para baixar a nova versão.';
   final String buttonText = 'ATUALIZAR';
 
@@ -27,7 +26,7 @@ class BlockScreenStates extends State<BlockScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 90),
+                margin: EdgeInsets.only(top: 160),
                 child: Text(
                   titleText,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -41,7 +40,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(10.0),
+                margin: EdgeInsets.only(left: 30, right: 30),
                 child: Text(
                   middleText,
                   style: TextStyle(fontSize: 20),
@@ -49,25 +48,28 @@ class BlockScreenStates extends State<BlockScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 70, right: 70, top: 70),
+                margin: EdgeInsets.only(left: 70, right: 70, top: 20),
                 child: Text(
                   bottomText,
                   style: TextStyle(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
               ),
-              ElevatedButtonTheme(
-                data: ElevatedButtonThemeData(
-                    style: ButtonStyle(
-                        minimumSize:
-                            MaterialStateProperty.all<Size>(Size(320, 50)),
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.red),
-                        textStyle: MaterialStateProperty.all<TextStyle>(
-                            TextStyle(fontSize: 30)))),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(buttonText),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: ElevatedButtonTheme(
+                  data: ElevatedButtonThemeData(
+                      style: ButtonStyle(
+                          minimumSize:
+                              MaterialStateProperty.all<Size>(Size(320, 50)),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.red),
+                          textStyle: MaterialStateProperty.all<TextStyle>(
+                              TextStyle(fontSize: 20)))),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(buttonText),
+                  ),
                 ),
               ),
             ],
