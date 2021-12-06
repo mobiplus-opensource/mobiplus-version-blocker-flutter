@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:store_redirect/store_redirect.dart';
 
 class BlockScreen extends StatefulWidget {
   BlockScreen({Key? key}) : super(key: key);
@@ -67,7 +68,11 @@ class BlockScreenStates extends State<BlockScreen> {
                           textStyle: MaterialStateProperty.all<TextStyle>(
                               TextStyle(fontSize: 20)))),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      StoreRedirect.redirect(
+                          androidAppId: "com.android.chrome",
+                          iOSAppId: "535886823");
+                    },
                     child: Text(buttonText),
                   ),
                 ),
