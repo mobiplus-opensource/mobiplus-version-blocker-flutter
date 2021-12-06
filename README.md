@@ -65,6 +65,4 @@ We'd love you to contribute to Version Blocker Flutter.  please read our [Contri
 
 NEEDS TO ADD STRUCTURE
 
-### Found a bug?
-
 - open a issue with the description and the way of reproduction. Give preference to adding images.
