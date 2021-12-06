@@ -63,6 +63,5 @@ dependencies:
 
 We'd love you to contribute to Version Blocker Flutter.  please read our [Contribution Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md)
 
-NEEDS TO ADD STRUCTURE
-
+## Found a bug?
 - open a issue with the description and the way of reproduction. Give preference to adding images.
