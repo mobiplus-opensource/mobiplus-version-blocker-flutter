@@ -67,11 +67,4 @@ NEEDS TO ADD STRUCTURE
 
 ### Found a bug?
 
-- ADD INSTRUCTIONS ABOUT "GOOD FIRST ISSUES"
-- ADD INSTRUCTIONS ABOUT PULL REQUESTS?
-- ADD INSTRUCTIONS ABOUT OPEN ISSUES
-- ADD INSTRUCTIONS ABOUT CODE OF CONDUCT
-
-```
-
-```
+- open a problem with the description and the way of reproduction. Give preference to adding images.
