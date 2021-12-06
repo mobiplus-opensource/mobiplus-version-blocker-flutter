@@ -61,7 +61,7 @@ dependencies:
 
 ## How to contribute
 
-We'd love you to contribute to Version Blocker Flutter.  please read our [Contribution Guide](CONTRIBUTING.md) and [Code of Conduct](https://github.com/mobiplus-opensource/mobiplus-version-blocker-flutter/blob/14d89e48bcb635e42559109675e4ff1de66404c4/CODE_OF_CONDUCT.md)
+We'd love you to contribute to Version Blocker Flutter.  please read our [Contribution Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md)
 
 NEEDS TO ADD STRUCTURE
 
