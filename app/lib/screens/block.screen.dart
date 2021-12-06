@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class BlockScreen extends StatefulWidget {
@@ -12,8 +14,8 @@ class BlockScreen extends StatefulWidget {
 class BlockScreenStates extends State<BlockScreen> {
   String titleText = 'Tá na hora de atualizar seu aplicativo';
   final String middleText =
-      'Fizemos algumas atualizações desde a ultima vez por aqui';
-  final String bottomText = 'Clica aí no botão para baixar a nova versão';
+      'Fizemos algumas atualizações desde a ultima vez por aqui.';
+  final String bottomText = 'Clica aí no botão para baixar a nova versão.';
   final String buttonText = 'ATUALIZAR';
 
   @override
@@ -22,41 +24,48 @@ class BlockScreenStates extends State<BlockScreen> {
       home: Scaffold(
         body: Center(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(.0),
                 margin: EdgeInsets.only(top: 90),
                 child: Text(
-                  titleText,  
+                  titleText,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
+                alignment: Alignment(0.0, 0.0),
               ),
               Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/cat.png'),
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment(0.0, -1.05),
-                  ),
+                child: Image(
+                  image: AssetImage('assets/images/update_icon.jpg'),
+                  fit: BoxFit.fill,
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(10.0),
                 child: Text(
                   middleText,
                   style: TextStyle(fontSize: 20),
+                  textAlign: TextAlign.center,
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(8.0),
+                margin: EdgeInsets.only(left: 70, right: 70, top: 70),
                 child: Text(
                   bottomText,
                   style: TextStyle(fontSize: 20),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextButton(
+              ElevatedButtonTheme(
+                data: ElevatedButtonThemeData(
+                    style: ButtonStyle(
+                        minimumSize:
+                            MaterialStateProperty.all<Size>(Size(320, 50)),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.red),
+                        textStyle: MaterialStateProperty.all<TextStyle>(
+                            TextStyle(fontSize: 30)))),
+                child: ElevatedButton(
                   onPressed: () {},
                   child: Text(buttonText),
                 ),
