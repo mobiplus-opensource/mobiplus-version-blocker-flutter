@@ -1,6 +1,6 @@
 # Contributing to Version Blocker
 
-First time contributing to Version Blocker? Read our [Code of Conduct](CODE_OF_CONDUCT.md) and review [How To Open a Mobiplus Pull Request](https://docs.brew.sh/How-To-Open-a-Homebrew-Pull-Request).
+First time contributing to Version Blocker? Read our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Report a bug
 
