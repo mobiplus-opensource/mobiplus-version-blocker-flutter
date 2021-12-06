@@ -67,4 +67,4 @@ NEEDS TO ADD STRUCTURE
 
 ### Found a bug?
 
-- open a problem with the description and the way of reproduction. Give preference to adding images.
+- open a issue with the description and the way of reproduction. Give preference to adding images.
