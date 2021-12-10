@@ -1,8 +1,10 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info/package_info.dart';
 
 
 final _app = Firebase.app();
@@ -20,6 +22,14 @@ Future<bool> checkAndBlockVersion() async {
     androidBuildNumber: value['androidBuildNumber'] as int,
     iosBuildNumber: value['iosBuildNumber'] as int,
   );
+
+  final appBuildNumber = int.parse(PackageInfoHelper()._buildNumber);
+
+  final checkVersion = Platform.isIOS ? blockData.iosBuildNumber : blockData.androidBuildNumber;
+  if (appBuildNumber > checkVersion) {
+    return false;
+  }
+
   return true;
 }
 
@@ -45,4 +55,19 @@ class BlockData {
         "androidBuildsNumber": androidBuildNumber,
         "iosBuildsNumber": iosBuildNumber,
       };
+}
+
+class PackageInfoHelper {
+  String _buildNumber = '';
+  String _versionNumber = '';
+
+  String get buildNumber => _buildNumber;
+
+  String get versionNumber => _versionNumber;
+
+  Future<void> load() async {
+    final _infos = await PackageInfo.fromPlatform();
+    _buildNumber = _infos.buildNumber;
+    _versionNumber = _infos.version;
+  }
 }
