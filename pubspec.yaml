@@ -13,7 +13,7 @@ dependencies:
   firebase_database: ^9.0.2
   flutter:
     sdk: flutter
-  package_info: ^2.0.2
+  package_info_plus: ^1.3.0
 
 dev_dependencies:
   flutter_test:

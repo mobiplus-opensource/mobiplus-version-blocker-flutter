@@ -22,7 +22,7 @@ Future<bool> checkAndBlockVersion() async {
     androidBuildNumber: value['androidBuildNumber'] as int,
     iosBuildNumber: value['iosBuildNumber'] as int,
   );
-
+  PackageInfoHelper().load();
   final appBuildNumber = int.parse(PackageInfoHelper()._buildNumber);
 
   final checkVersion = Platform.isIOS ? blockData.iosBuildNumber : blockData.androidBuildNumber;
