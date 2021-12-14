@@ -8,8 +8,6 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 final _app = Firebase.app();
 final _child = FirebaseDatabase.instanceFor(app: _app).ref().child('blockedVersions');
-String _buildNumber = '';
-String _versionNumber = '';
 
 Future<bool> initVersionBlocker() {
   _child.onChildChanged.listen((_) => checkAndBlockVersion());
@@ -28,11 +26,10 @@ Future<bool> checkAndBlockVersion() async {
   _info = await PackageInfo.fromPlatform();
   final appBuildNumber = int.parse(_info.buildNumber);
 
-  final checkVersion = Platform.isIOS ? blockData.iosBuildNumber : blockData.androidBuildNumber;
+  final int checkVersion = Platform.isIOS ? blockData.iosBuildNumber : blockData.androidBuildNumber;
   if (appBuildNumber > checkVersion) {
     return false;
   }
-
   return true;
 }
 
