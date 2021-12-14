@@ -1,8 +1,9 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 
 final _app = Firebase.app();
@@ -20,6 +21,15 @@ Future<bool> checkAndBlockVersion() async {
     androidBuildNumber: value['androidBuildNumber'] as int,
     iosBuildNumber: value['iosBuildNumber'] as int,
   );
+
+  final PackageInfo _info;
+  _info = await PackageInfo.fromPlatform();
+  final appBuildNumber = int.parse(_info.buildNumber);
+
+  final int checkVersion = Platform.isIOS ? blockData.iosBuildNumber : blockData.androidBuildNumber;
+  if (appBuildNumber > checkVersion) {
+    return false;
+  }
   return true;
 }
 
