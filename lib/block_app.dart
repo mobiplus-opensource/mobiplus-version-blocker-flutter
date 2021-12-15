@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:version_blocker_flutter/exceptions/exceptions_imports.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -17,6 +18,10 @@ class BlockApp {
 
   String get _buildApp => _info.buildNumber;
   RegExp get _regexContainsOnlyNumbers => RegExp(r"^[0-9]+$");
+
+  static Future initBlockApp() async {
+    await Firebase.initializeApp();
+  }
 
   Text get _messageValue =>
       _message ??
