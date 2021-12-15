@@ -1,5 +1,5 @@
-import 'package:example/screens/version_blocker/version.blocker.functions.dart';
 import 'package:flutter/material.dart';
+import 'package:version_blocker_flutter_example/screens/version_blocker/version.blocker.functions.dart';
 
 import 'block.screen.dart';
 
