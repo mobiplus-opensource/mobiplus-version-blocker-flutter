@@ -4,10 +4,8 @@ import 'package:version_blocker_flutter/exceptions/exceptions_imports.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class BlockApp {
-  BlockApp._();
 
   static late final PackageInfo _info;
-  static final BlockApp _instance = BlockApp._();
 
   Text? _message;
   static late final BuildContext _context;
@@ -19,7 +17,7 @@ class BlockApp {
   String get _buildApp => _info.buildNumber;
   RegExp get _regexContainsOnlyNumbers => RegExp(r"^[0-9]+$");
 
-  static Future initBlockApp() async {
+  void initBlockApp() async {
     await Firebase.initializeApp();
   }
 
@@ -29,12 +27,6 @@ class BlockApp {
         "Por favor, atualize seu aplicativo!",
         style: Theme.of(_context).textTheme.headline2,
       );
-
-  static Future<BlockApp> instance({required BuildContext context}) async {
-    _context = context;
-    _info = await PackageInfo.fromPlatform();
-    return _instance;
-  }
 
   void block({required String build}) {
     build.trim();
