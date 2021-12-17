@@ -23,8 +23,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () async {
                 final blockApp = BlockApp();
-                blockApp.initVersionBlocker();
-                final mustShowBlockScreen = await initVersionBlocker();
+                final mustShowBlockScreen = await blockApp.initVersionBlocker();
                 if (mustShowBlockScreen) {
                   Navigator.push(
                     context,
