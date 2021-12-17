@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:version_blocker_flutter_example/screens/home.screen.dart';
 
 Future<void> main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());

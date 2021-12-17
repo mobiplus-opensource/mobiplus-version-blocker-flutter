@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:firebase/firebase.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +57,8 @@ class BlockApp {
 
   void _blockAppAction() => showViewBlock();
 
-  Future<bool> initVersionBlocker() {
+  Future<bool> initVersionBlocker(BuildContext buildContext) {
+    _context = buildContext;
     _child.onChildChanged.listen((_) => checkAndBlockVersion());
     return checkAndBlockVersion();
   }
@@ -84,7 +86,7 @@ class BlockApp {
     return true;
   }
 
-  void _showBlockModal(BlockData blockData) {
+  static void _showBlockModal(BlockData blockData) {
     showModalBottomSheet(
       elevation: 0,
       context: _context,
