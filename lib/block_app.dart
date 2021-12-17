@@ -21,10 +21,6 @@ class BlockApp {
   String get _buildApp => _info.buildNumber;
   RegExp get _regexContainsOnlyNumbers => RegExp(r"^[0-9]+$");
 
-  void initBlockApp() async {
-    initVersionBlocker();
-  }
-
   Text get _messageValue =>
       _message ??
       Text(

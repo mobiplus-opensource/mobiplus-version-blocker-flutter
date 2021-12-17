@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:version_blocker_flutter/version_blocker_flutter.dart';
 import 'package:version_blocker_flutter_example/screens/version_blocker/version.blocker.functions.dart';
 
 import 'block.screen.dart';
@@ -21,6 +22,8 @@ class HomeScreen extends StatelessWidget {
                         TextStyle(fontSize: 20)))),
             child: ElevatedButton(
               onPressed: () async {
+                final blockApp = BlockApp();
+                blockApp.initVersionBlocker();
                 final mustShowBlockScreen = await initVersionBlocker();
                 if (mustShowBlockScreen) {
                   Navigator.push(
