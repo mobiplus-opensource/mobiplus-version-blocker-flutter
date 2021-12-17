@@ -1,15 +1,19 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:firebase/firebase.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:version_blocker_flutter/block.screen.dart';
 import 'package:version_blocker_flutter/exceptions/exceptions_imports.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class BlockApp {
   static late final PackageInfo _info;
-  final _child = FirebaseDatabase.instanceFor(app: Firebase.app()).ref().child('blockedVersions');
+  final _child = FirebaseDatabase.instanceFor(app: Firebase.app())
+      .ref()
+      .child('blockedVersions');
 
   Text? _message;
   static late final BuildContext _context;
@@ -20,10 +24,6 @@ class BlockApp {
 
   String get _buildApp => _info.buildNumber;
   RegExp get _regexContainsOnlyNumbers => RegExp(r"^[0-9]+$");
-
-  void initBlockApp() async {
-    initVersionBlocker();
-  }
 
   Text get _messageValue =>
       _message ??
@@ -57,7 +57,8 @@ class BlockApp {
 
   void _blockAppAction() => showViewBlock();
 
-  Future<bool> initVersionBlocker() {
+  Future<bool> initVersionBlocker(BuildContext buildContext) {
+    _context = buildContext;
     _child.onChildChanged.listen((_) => checkAndBlockVersion());
     return checkAndBlockVersion();
   }
@@ -80,7 +81,30 @@ class BlockApp {
     if (appBuildNumber > checkVersion) {
       return false;
     }
+
+    _showBlockModal(blockData);
     return true;
+  }
+
+  static void _showBlockModal(BlockData blockData) {
+    showModalBottomSheet(
+      elevation: 0,
+      context: _context,
+      isDismissible: false,
+      isScrollControlled: true,
+      enableDrag: false,
+      backgroundColor: Colors.red,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
+      ),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      builder: (context) {
+        return BlockScreen();
+      },
+    );
   }
 }
 
