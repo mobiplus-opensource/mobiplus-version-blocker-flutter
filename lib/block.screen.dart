@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:store_redirect/store_redirect.dart';
 
 class BlockScreen extends StatefulWidget {
-  BlockScreen({Key? key}) : super(key: key);
+  const BlockScreen({Key? key}) : super(key: key);
 
   @override
   State<BlockScreen> createState() {
