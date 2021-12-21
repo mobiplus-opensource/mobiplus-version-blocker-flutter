@@ -4,19 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:store_redirect/store_redirect.dart';
 
 class BlockScreen extends StatefulWidget {
-  const BlockScreen({Key? key}) : super(key: key);
+  final String titleText;
+  const BlockScreen(
+    this.titleText,
+  ) : super();
 
   @override
-  State<BlockScreen> createState() {
-    return BlockScreenStates();
-  }
+  State<BlockScreen> createState() => BlockScreenStates();
 }
 
 class BlockScreenStates extends State<BlockScreen> {
-  String titleText = 'Tá na hora de atualizar seu aplicativo';
-  final String middleText = 'Fizemos algumas atualizações desde a última vez por aqui.';
-  final String bottomText = 'Clica aí no botão para baixar a nova versão.';
-  final String buttonText = 'ATUALIZAR';
+  final String _middleText =
+      'Fizemos algumas atualizações desde a última vez por aqui.';
+  final String _bottomText = 'Clica aí no botão para baixar a nova versão.';
+  final String _buttonText = 'ATUALIZAR';
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class BlockScreenStates extends State<BlockScreen> {
               Container(
                 margin: EdgeInsets.only(top: 160),
                 child: Text(
-                  titleText,
+                  widget.titleText,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 alignment: Alignment(0.0, 0.0),
@@ -43,7 +44,7 @@ class BlockScreenStates extends State<BlockScreen> {
               Container(
                 margin: EdgeInsets.only(left: 30, right: 30),
                 child: Text(
-                  middleText,
+                  _middleText,
                   style: TextStyle(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
@@ -51,7 +52,7 @@ class BlockScreenStates extends State<BlockScreen> {
               Container(
                 margin: EdgeInsets.only(left: 70, right: 70, top: 20),
                 child: Text(
-                  bottomText,
+                  _bottomText,
                   style: TextStyle(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
@@ -73,7 +74,7 @@ class BlockScreenStates extends State<BlockScreen> {
                           androidAppId: "com.android.chrome",
                           iOSAppId: "535886823");
                     },
-                    child: Text(buttonText),
+                    child: Text(_buttonText),
                   ),
                 ),
               ),
