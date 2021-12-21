@@ -10,7 +10,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 class BlockApp {
   static late final PackageInfo _info;
-  final _child = FirebaseDatabase.instanceFor(app: Firebase.app())
+  late final _child = FirebaseDatabase.instanceFor(app: Firebase.app())
       .ref()
       .child('blockedVersions');
 

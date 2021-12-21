@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    initBlockVersion(context);
     return MaterialApp(
       home: Builder(builder: (context) {
         return Center(
@@ -20,14 +21,10 @@ class HomeScreen extends StatelessWidget {
                         TextStyle(fontSize: 20)))),
             child: ElevatedButton(
               onPressed: () async {
-                final blockApp = BlockApp();
-                final mustShowBlockScreen = await blockApp.initVersionBlocker(context);
-                if (mustShowBlockScreen) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => BlockScreen()),
-                  );
-                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BlockScreen()),
+                );
               },
               child: Text('Me clique'),
             ),
@@ -35,5 +32,10 @@ class HomeScreen extends StatelessWidget {
         );
       }),
     );
+  }
+
+  void initBlockVersion(BuildContext context) async {
+    final blockApp = BlockApp();
+    final mustShowBlockScreen = await blockApp.initVersionBlocker(context);
   }
 }
