@@ -5,56 +5,22 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:version_blocker_flutter/block.screen.dart';
-import 'package:version_blocker_flutter/exceptions/exceptions_imports.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class BlockApp {
-  static late final PackageInfo _info;
   late final _child = FirebaseDatabase.instanceFor(app: Firebase.app())
       .ref()
       .child('blockedVersions');
 
-  Text? _message;
   static late final BuildContext _context;
 
-  Text get message => _messageValue;
+  late String _titleText;
 
-  set message(Text value) => _message = value;
-
-  String get _buildApp => _info.buildNumber;
-  RegExp get _regexContainsOnlyNumbers => RegExp(r"^[0-9]+$");
-
-  Text get _messageValue =>
-      _message ??
-      Text(
-        "Por favor, atualize seu aplicativo!",
-        style: Theme.of(_context).textTheme.headline2,
-      );
-
-  void block({required String build}) {
-    build.trim();
-    if (build.isEmpty) throw BuildEmptyException();
-    if (!build.contains(_regexContainsOnlyNumbers)) throw BuildWrongFormat();
-    if (build.compareTo(_buildApp) == 0) _blockAppAction();
+  void title(String titleText) {
+    titleText.isNotEmpty
+        ? _titleText = titleText
+        : _titleText = 'Tá na hora de atualizar seu aplicativo';
   }
-
-  void showViewBlock() {
-    Navigator.push(
-      _context,
-      MaterialPageRoute(
-        builder: (_) => Scaffold(
-          body: WillPopScope(
-            onWillPop: () async => false,
-            child: Center(
-              child: _messageValue,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  void _blockAppAction() => showViewBlock();
 
   Future<bool> initVersionBlocker(BuildContext buildContext) {
     _context = buildContext;
@@ -85,7 +51,7 @@ class BlockApp {
     return true;
   }
 
-  static void _showBlockModal(BlockData blockData) {
+  void _showBlockModal(BlockData blockData) {
     showModalBottomSheet(
       elevation: 0,
       context: _context,
@@ -101,7 +67,7 @@ class BlockApp {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        return BlockScreen();
+        return BlockScreen(_titleText);
       },
     );
   }
