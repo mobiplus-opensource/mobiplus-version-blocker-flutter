@@ -14,34 +14,55 @@ class BlockApp {
 
   static late final BuildContext _context;
 
-  String _titleText = 'Tá na hora de atualizar seu aplicativo';
-  late String _middleText = 'Fizemos algumas atualizações desde a última vez por aqui.';
+  late String _titleText = 'Tá na hora de atualizar seu aplicativo';
+  late TextStyle? _titleStyle;
+  late String _middleText =
+      'Fizemos algumas atualizações desde a última vez por aqui.';
+  late TextStyle? _middleTextStyle;
   late String _bottomText = 'Clica aí no botão para baixar a nova versão.';
+  late TextStyle? _bottomTextStyle;
   late String _buttonText = 'ATUALIZAR';
+  late TextStyle? _buttonTextStyle;
 
-  void title(String titleText, [TextStyle? titleStyle]) {
+  void title(String titleText, {TextStyle? titleStyle}) {
     titleText.isNotEmpty
         ? _titleText = titleText
         : _titleText = 'Tá na hora de atualizar seu aplicativo';
+
+    if (titleStyle != null) {
+      _titleStyle = titleStyle;
+    }
   }
 
-  void middleText(String middleText, [TextStyle? middleTextStyle]) {
+  void middleText(String middleText, {TextStyle? middleTextStyle}) {
     middleText.isNotEmpty
         ? _middleText = middleText
         : _middleText =
             'Fizemos algumas atualizações desde a última vez por aqui.';
+
+    if (middleTextStyle != null) {
+      _middleTextStyle = middleTextStyle;
+    }
   }
 
-  void bottomText(String bottomText, [TextStyle? bottomTextStyle]) {
+  void bottomText(String bottomText, {TextStyle? bottomTextStyle}) {
     bottomText.isNotEmpty
         ? _bottomText = bottomText
         : _bottomText = 'Clica aí no botão para baixar a nova versão.';
+
+    if (bottomTextStyle != null) {
+      _bottomTextStyle = bottomTextStyle;
+    }
   }
 
-  void buttonText(String buttonText, [TextStyle? buttonTextStyle]) {
+  void buttonText(String buttonText, {TextStyle? buttonTextStyle}) {
     buttonText.isNotEmpty
         ? _buttonText = buttonText
         : _buttonText = 'ATUALIZAR';
+
+    if (buttonTextStyle != null) {
+      _buttonTextStyle = buttonTextStyle;
+    }
   }
 
   Future<bool> initVersionBlocker(BuildContext buildContext) {
