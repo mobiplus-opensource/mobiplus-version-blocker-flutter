@@ -24,41 +24,40 @@ class BlockApp {
   late String _buttonText = 'ATUALIZAR';
   late TextStyle? _buttonTextStyle;
 
-  void title(String titleText, {TextStyle? titleStyle}) {
-    titleText.isNotEmpty
-        ? _titleText = titleText
-        : _titleText = 'Tá na hora de atualizar seu aplicativo';
+  void title({TextStyle? titleStyle, String? titleText}) {
+    if (titleText != null) {
+      _titleText = titleText;
+    }
 
     if (titleStyle != null) {
       _titleStyle = titleStyle;
     }
   }
 
-  void middleText(String middleText, {TextStyle? middleTextStyle}) {
-    middleText.isNotEmpty
-        ? _middleText = middleText
-        : _middleText =
-            'Fizemos algumas atualizações desde a última vez por aqui.';
+  void middleText({String? middleText, TextStyle? middleTextStyle}) {
+    if (middleText != null) {
+      _middleText = middleText;
+    }
 
     if (middleTextStyle != null) {
       _middleTextStyle = middleTextStyle;
     }
   }
 
-  void bottomText(String bottomText, {TextStyle? bottomTextStyle}) {
-    bottomText.isNotEmpty
-        ? _bottomText = bottomText
-        : _bottomText = 'Clica aí no botão para baixar a nova versão.';
+  void bottomText({String? bottomText, TextStyle? bottomTextStyle}) {
+    if (bottomText != null) {
+      _bottomText = bottomText;
+    }
 
     if (bottomTextStyle != null) {
       _bottomTextStyle = bottomTextStyle;
     }
   }
 
-  void buttonText(String buttonText, {TextStyle? buttonTextStyle}) {
-    buttonText.isNotEmpty
-        ? _buttonText = buttonText
-        : _buttonText = 'ATUALIZAR';
+  void buttonText({String? buttonText, TextStyle? buttonTextStyle}) {
+    if (buttonText != null) {
+      _buttonText = buttonText;
+    }
 
     if (buttonTextStyle != null) {
       _buttonTextStyle = buttonTextStyle;
