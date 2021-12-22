@@ -19,26 +19,26 @@ class BlockApp {
   late String _bottomText = 'Clica aí no botão para baixar a nova versão.';
   late String _buttonText = 'ATUALIZAR';
 
-  void title(String titleText) {
+  void title(String titleText, [TextStyle? titleStyle]) {
     titleText.isNotEmpty
         ? _titleText = titleText
         : _titleText = 'Tá na hora de atualizar seu aplicativo';
   }
 
-  void middleText(String middleText) {
+  void middleText(String middleText, [TextStyle? middleTextStyle]) {
     middleText.isNotEmpty
         ? _middleText = middleText
         : _middleText =
             'Fizemos algumas atualizações desde a última vez por aqui.';
   }
 
-  void bottomText(String bottomText) {
+  void bottomText(String bottomText, [TextStyle? bottomTextStyle]) {
     bottomText.isNotEmpty
         ? _bottomText = bottomText
         : _bottomText = 'Clica aí no botão para baixar a nova versão.';
   }
 
-  void buttonText(String buttonText) {
+  void buttonText(String buttonText, [TextStyle? buttonTextStyle]) {
     buttonText.isNotEmpty
         ? _buttonText = buttonText
         : _buttonText = 'ATUALIZAR';
