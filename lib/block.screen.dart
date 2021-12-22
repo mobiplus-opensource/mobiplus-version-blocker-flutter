@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:store_redirect/store_redirect.dart';
 
@@ -8,11 +10,21 @@ class BlockScreen extends StatefulWidget {
   final String middleText;
   final String bottomText;
   final String buttonText;
+
+  final TextStyle titleStyle;
+  final TextStyle middleStyle;
+  final TextStyle bottomStyle;
+  final TextStyle buttonStyle;
+
   const BlockScreen(
     this.titleText,
     this.middleText,
     this.bottomText,
     this.buttonText,
+    this.titleStyle,
+    this.middleStyle,
+    this.bottomStyle,
+    this.buttonStyle,
   ) : super();
 
   @override
@@ -32,7 +44,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 margin: EdgeInsets.only(top: 160),
                 child: Text(
                   widget.titleText,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: widget.titleStyle,
                 ),
                 alignment: Alignment(0.0, 0.0),
               ),
@@ -46,7 +58,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 margin: EdgeInsets.only(left: 30, right: 30),
                 child: Text(
                   widget.middleText,
-                  style: TextStyle(fontSize: 20),
+                  style: widget.middleStyle,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -54,7 +66,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 margin: EdgeInsets.only(left: 70, right: 70, top: 20),
                 child: Text(
                   widget.bottomText,
-                  style: TextStyle(fontSize: 20),
+                  style: widget.bottomStyle,
                   textAlign: TextAlign.center,
                 ),
               ),

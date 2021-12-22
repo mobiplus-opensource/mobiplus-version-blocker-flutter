@@ -15,14 +15,17 @@ class BlockApp {
   static late final BuildContext _context;
 
   late String _titleText = 'Tá na hora de atualizar seu aplicativo';
-  late TextStyle? _titleStyle;
+  late TextStyle _titleStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+
   late String _middleText =
       'Fizemos algumas atualizações desde a última vez por aqui.';
-  late TextStyle? _middleTextStyle;
+  late TextStyle _middleTextStyle = TextStyle(fontSize: 20);
+
   late String _bottomText = 'Clica aí no botão para baixar a nova versão.';
-  late TextStyle? _bottomTextStyle;
+  late TextStyle _bottomTextStyle = TextStyle(fontSize: 20);
+
   late String _buttonText = 'ATUALIZAR';
-  late TextStyle? _buttonTextStyle;
+  late TextStyle _buttonTextStyle = TextStyle(fontSize: 20);
 
   void title({TextStyle? titleStyle, String? titleText}) {
     if (titleText != null) {
@@ -109,7 +112,7 @@ class BlockApp {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText);
+        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText, _titleStyle, _middleTextStyle, _bottomTextStyle, _buttonTextStyle);
       },
     );
   }
