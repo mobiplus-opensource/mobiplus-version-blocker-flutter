@@ -14,12 +14,34 @@ class BlockApp {
 
   static late final BuildContext _context;
 
-  late String _titleText;
+  String _titleText = 'Tá na hora de atualizar seu aplicativo';
+  late String _middleText = 'Fizemos algumas atualizações desde a última vez por aqui.';
+  late String _bottomText = 'Clica aí no botão para baixar a nova versão.';
+  late String _buttonText = 'ATUALIZAR';
 
   void title(String titleText) {
     titleText.isNotEmpty
         ? _titleText = titleText
         : _titleText = 'Tá na hora de atualizar seu aplicativo';
+  }
+
+  void middleText(String middleText) {
+    middleText.isNotEmpty
+        ? _middleText = middleText
+        : _middleText =
+            'Fizemos algumas atualizações desde a última vez por aqui.';
+  }
+
+  void bottomText(String bottomText) {
+    bottomText.isNotEmpty
+        ? _bottomText = bottomText
+        : _bottomText = 'Clica aí no botão para baixar a nova versão.';
+  }
+
+  void buttonText(String buttonText) {
+    buttonText.isNotEmpty
+        ? _buttonText = buttonText
+        : _buttonText = 'ATUALIZAR';
   }
 
   Future<bool> initVersionBlocker(BuildContext buildContext) {
@@ -67,7 +89,7 @@ class BlockApp {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        return BlockScreen(_titleText);
+        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText);
       },
     );
   }

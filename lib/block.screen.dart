@@ -5,8 +5,14 @@ import 'package:store_redirect/store_redirect.dart';
 
 class BlockScreen extends StatefulWidget {
   final String titleText;
+  final String middleText;
+  final String bottomText;
+  final String buttonText;
   const BlockScreen(
     this.titleText,
+    this.middleText,
+    this.bottomText,
+    this.buttonText,
   ) : super();
 
   @override
@@ -14,11 +20,6 @@ class BlockScreen extends StatefulWidget {
 }
 
 class BlockScreenStates extends State<BlockScreen> {
-  final String _middleText =
-      'Fizemos algumas atualizações desde a última vez por aqui.';
-  final String _bottomText = 'Clica aí no botão para baixar a nova versão.';
-  final String _buttonText = 'ATUALIZAR';
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,7 +45,7 @@ class BlockScreenStates extends State<BlockScreen> {
               Container(
                 margin: EdgeInsets.only(left: 30, right: 30),
                 child: Text(
-                  _middleText,
+                  widget.middleText,
                   style: TextStyle(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
@@ -52,7 +53,7 @@ class BlockScreenStates extends State<BlockScreen> {
               Container(
                 margin: EdgeInsets.only(left: 70, right: 70, top: 20),
                 child: Text(
-                  _bottomText,
+                  widget.bottomText,
                   style: TextStyle(fontSize: 20),
                   textAlign: TextAlign.center,
                 ),
@@ -74,7 +75,7 @@ class BlockScreenStates extends State<BlockScreen> {
                           androidAppId: "com.android.chrome",
                           iOSAppId: "535886823");
                     },
-                    child: Text(_buttonText),
+                    child: Text(widget.buttonText),
                   ),
                 ),
               ),

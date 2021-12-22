@@ -37,6 +37,9 @@ class HomeScreen extends StatelessWidget {
   void initBlockVersion(BuildContext context) async {
     final blockApp = BlockApp();
     blockApp.title('teste de título');
-    final mustShowBlockScreen = await blockApp.initVersionBlocker(context);
+    blockApp.middleText('teste de midle text');
+    blockApp.bottomText('teste de bottom text');
+    blockApp.buttonText('teste de button text');
+    await blockApp.initVersionBlocker(context);
   }
 }
