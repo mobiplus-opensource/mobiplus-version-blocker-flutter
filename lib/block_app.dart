@@ -14,12 +14,57 @@ class BlockApp {
 
   static late final BuildContext _context;
 
-  late String _titleText;
+  late String _titleText = 'Tá na hora de atualizar seu aplicativo';
+  late TextStyle _titleStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
 
-  void title(String titleText) {
-    titleText.isNotEmpty
-        ? _titleText = titleText
-        : _titleText = 'Tá na hora de atualizar seu aplicativo';
+  late String _middleText =
+      'Fizemos algumas atualizações desde a última vez por aqui.';
+  late TextStyle _middleTextStyle = TextStyle(fontSize: 20);
+
+  late String _bottomText = 'Clica aí no botão para baixar a nova versão.';
+  late TextStyle _bottomTextStyle = TextStyle(fontSize: 20);
+
+  late String _buttonText = 'ATUALIZAR';
+  late TextStyle _buttonTextStyle = TextStyle(fontSize: 20);
+
+  void title({TextStyle? titleStyle, String? titleText}) {
+    if (titleText != null) {
+      _titleText = titleText;
+    }
+
+    if (titleStyle != null) {
+      _titleStyle = titleStyle;
+    }
+  }
+
+  void middleText({String? middleText, TextStyle? middleTextStyle}) {
+    if (middleText != null) {
+      _middleText = middleText;
+    }
+
+    if (middleTextStyle != null) {
+      _middleTextStyle = middleTextStyle;
+    }
+  }
+
+  void bottomText({String? bottomText, TextStyle? bottomTextStyle}) {
+    if (bottomText != null) {
+      _bottomText = bottomText;
+    }
+
+    if (bottomTextStyle != null) {
+      _bottomTextStyle = bottomTextStyle;
+    }
+  }
+
+  void buttonText({String? buttonText, TextStyle? buttonTextStyle}) {
+    if (buttonText != null) {
+      _buttonText = buttonText;
+    }
+
+    if (buttonTextStyle != null) {
+      _buttonTextStyle = buttonTextStyle;
+    }
   }
 
   Future<bool> initVersionBlocker(BuildContext buildContext) {
@@ -67,7 +112,7 @@ class BlockApp {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        return BlockScreen(_titleText);
+        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText, _titleStyle, _middleTextStyle, _bottomTextStyle, _buttonTextStyle);
       },
     );
   }
