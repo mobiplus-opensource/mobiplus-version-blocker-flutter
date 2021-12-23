@@ -16,6 +16,8 @@ class BlockScreen extends StatefulWidget {
 
   final ButtonStyle buttonStyle;
 
+  final Image image;
+
   const BlockScreen(
     this.titleText,
     this.middleText,
@@ -26,6 +28,7 @@ class BlockScreen extends StatefulWidget {
     this.bottomTextStyle,
     this.buttonTextStyle,
     this.buttonStyle,
+    this.image,
   ) : super();
 
   @override

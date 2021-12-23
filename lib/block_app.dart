@@ -15,7 +15,8 @@ class BlockApp {
   static late final BuildContext _context;
 
   late String _titleText = 'Tá na hora de atualizar seu aplicativo';
-  late TextStyle _titleStyle = const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+  late TextStyle _titleStyle =
+      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
 
   late String _middleText =
       'Fizemos algumas atualizações desde a última vez por aqui.';
@@ -26,13 +27,16 @@ class BlockApp {
 
   late String _buttonText = 'ATUALIZAR';
   late TextStyle _buttonTextStyle = const TextStyle(fontSize: 20);
+
   late ButtonStyle _buttonStyle = ButtonStyle(
-                          minimumSize:
-                              MaterialStateProperty.all<Size>(const Size(320, 50)),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                          textStyle: MaterialStateProperty.all<TextStyle>(
-                              TextStyle(fontSize: 20)));
+      minimumSize: MaterialStateProperty.all<Size>(const Size(320, 50)),
+      backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+      textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 20)));
+
+  late Image _image = Image(
+    image: AssetImage('assets/images/update_icon.jpg'),
+    fit: BoxFit.fill,
+  );
 
   void titleText({TextStyle? titleStyle, String? titleText}) {
     if (titleText != null) {
@@ -64,7 +68,10 @@ class BlockApp {
     }
   }
 
-  void button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle}) {
+  void button(
+      {String? buttonText,
+      TextStyle? buttonTextStyle,
+      ButtonStyle? buttonStyle}) {
     if (buttonText != null) {
       _buttonText = buttonText;
     }
@@ -73,8 +80,14 @@ class BlockApp {
       _buttonTextStyle = buttonTextStyle;
     }
 
-    if (buttonStyle != null){
+    if (buttonStyle != null) {
       _buttonStyle = buttonStyle;
+    }
+  }
+
+  void image({Image? image}) {
+    if (image != null) {
+      _image = image;
     }
   }
 
@@ -123,7 +136,17 @@ class BlockApp {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText, _titleStyle, _middleTextStyle, _bottomTextStyle, _buttonTextStyle, _buttonStyle);
+        return BlockScreen(
+            _titleText,
+            _middleText,
+            _bottomText,
+            _buttonText,
+            _titleStyle,
+            _middleTextStyle,
+            _bottomTextStyle,
+            _buttonTextStyle,
+            _buttonStyle,
+            _image);
       },
     );
   }
