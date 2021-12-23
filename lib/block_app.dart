@@ -15,19 +15,26 @@ class BlockApp {
   static late final BuildContext _context;
 
   late String _titleText = 'Tá na hora de atualizar seu aplicativo';
-  late TextStyle _titleStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+  late TextStyle _titleStyle = const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
 
   late String _middleText =
       'Fizemos algumas atualizações desde a última vez por aqui.';
-  late TextStyle _middleTextStyle = TextStyle(fontSize: 20);
+  late TextStyle _middleTextStyle = const TextStyle(fontSize: 20);
 
   late String _bottomText = 'Clica aí no botão para baixar a nova versão.';
-  late TextStyle _bottomTextStyle = TextStyle(fontSize: 20);
+  late TextStyle _bottomTextStyle = const TextStyle(fontSize: 20);
 
   late String _buttonText = 'ATUALIZAR';
-  late TextStyle _buttonTextStyle = TextStyle(fontSize: 20);
+  late TextStyle _buttonTextStyle = const TextStyle(fontSize: 20);
+  late ButtonStyle _buttonStyle = ButtonStyle(
+                          minimumSize:
+                              MaterialStateProperty.all<Size>(const Size(320, 50)),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.red),
+                          textStyle: MaterialStateProperty.all<TextStyle>(
+                              TextStyle(fontSize: 20)));
 
-  void title({TextStyle? titleStyle, String? titleText}) {
+  void titleText({TextStyle? titleStyle, String? titleText}) {
     if (titleText != null) {
       _titleText = titleText;
     }
@@ -57,13 +64,17 @@ class BlockApp {
     }
   }
 
-  void buttonText({String? buttonText, TextStyle? buttonTextStyle}) {
+  void button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle}) {
     if (buttonText != null) {
       _buttonText = buttonText;
     }
 
     if (buttonTextStyle != null) {
       _buttonTextStyle = buttonTextStyle;
+    }
+
+    if (buttonStyle != null){
+      _buttonStyle = buttonStyle;
     }
   }
 
@@ -112,7 +123,7 @@ class BlockApp {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText, _titleStyle, _middleTextStyle, _bottomTextStyle, _buttonTextStyle);
+        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText, _titleStyle, _middleTextStyle, _bottomTextStyle, _buttonTextStyle, _buttonStyle);
       },
     );
   }
