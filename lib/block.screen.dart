@@ -53,10 +53,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 alignment: Alignment(0.0, 0.0),
               ),
               Container(
-                child: Image(
-                  image: AssetImage('assets/images/update_icon.jpg'),
-                  fit: BoxFit.fill,
-                ),
+                child: widget.image
               ),
               Container(
                 margin: EdgeInsets.only(left: 30, right: 30),
