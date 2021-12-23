@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:store_redirect/store_redirect.dart';
 
@@ -11,19 +9,22 @@ class BlockScreen extends StatefulWidget {
   final String bottomText;
   final String buttonText;
 
-  final TextStyle titleStyle;
-  final TextStyle middleStyle;
-  final TextStyle bottomStyle;
-  final TextStyle buttonStyle;
+  final TextStyle titleTextStyle;
+  final TextStyle middleTexteStyle;
+  final TextStyle bottomTextStyle;
+  final TextStyle buttonTextStyle;
+
+  final ButtonStyle buttonStyle;
 
   const BlockScreen(
     this.titleText,
     this.middleText,
     this.bottomText,
     this.buttonText,
-    this.titleStyle,
-    this.middleStyle,
-    this.bottomStyle,
+    this.titleTextStyle,
+    this.middleTexteStyle,
+    this.bottomTextStyle,
+    this.buttonTextStyle,
     this.buttonStyle,
   ) : super();
 
@@ -44,7 +45,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 margin: EdgeInsets.only(top: 160),
                 child: Text(
                   widget.titleText,
-                  style: widget.titleStyle,
+                  style: widget.titleTextStyle,
                 ),
                 alignment: Alignment(0.0, 0.0),
               ),
@@ -58,7 +59,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 margin: EdgeInsets.only(left: 30, right: 30),
                 child: Text(
                   widget.middleText,
-                  style: widget.middleStyle,
+                  style: widget.middleTexteStyle,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -66,7 +67,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 margin: EdgeInsets.only(left: 70, right: 70, top: 20),
                 child: Text(
                   widget.bottomText,
-                  style: widget.bottomStyle,
+                  style: widget.bottomTextStyle,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -74,13 +75,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 padding: const EdgeInsets.all(15.0),
                 child: ElevatedButtonTheme(
                   data: ElevatedButtonThemeData(
-                      style: ButtonStyle(
-                          minimumSize:
-                              MaterialStateProperty.all<Size>(Size(320, 50)),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                          textStyle: MaterialStateProperty.all<TextStyle>(
-                              TextStyle(fontSize: 20)))),
+                      style: widget.buttonStyle),
                   child: ElevatedButton(
                     onPressed: () {
                       StoreRedirect.redirect(
