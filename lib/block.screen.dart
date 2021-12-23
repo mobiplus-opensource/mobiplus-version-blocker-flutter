@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:store_redirect/store_redirect.dart';
 
 class BlockScreen extends StatefulWidget {
@@ -52,9 +53,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 ),
                 alignment: Alignment(0.0, 0.0),
               ),
-              Container(
-                child: widget.image
-              ),
+              Container(child: widget.image),
               Container(
                 margin: EdgeInsets.only(left: 30, right: 30),
                 child: Text(
@@ -74,13 +73,13 @@ class BlockScreenStates extends State<BlockScreen> {
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: ElevatedButtonTheme(
-                  data: ElevatedButtonThemeData(
-                      style: widget.buttonStyle),
+                  data: ElevatedButtonThemeData(style: widget.buttonStyle),
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      final PackageInfo _info = await PackageInfo.fromPlatform();
                       StoreRedirect.redirect(
-                          androidAppId: "com.android.chrome",
-                          iOSAppId: "535886823");
+                          androidAppId: _info.packageName,
+                          iOSAppId: _info.packageName);
                     },
                     child: Text(widget.buttonText),
                   ),
