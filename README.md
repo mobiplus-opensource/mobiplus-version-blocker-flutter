@@ -31,17 +31,19 @@ The features can vary a little bit, but we can consider that is possible to appl
 - Integration with realtime database to determine the blocked versions
 - Customizable text style in title, body and button
 - Customizable color button and background color
+- Customizable image
 
-<!-- ## Get started
+## Get started
 
-```yaml
+```pubspec.yaml
 dependencies:
-  block_version: ^1.0.0
-``` -->
+  version_blocker_flutter: git@github.com:mobiplus-opensource/mobiplus-version-blocker-flutter
+```
+> this approach was chosen as a temporary workaround as it quickly delivers the delivery with the latest lib version.
 
 ## Super simple to use
 
-***As soon as possible we will make available a sample with the implementation.***
+
 
 # Colaborating
 
