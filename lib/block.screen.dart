@@ -41,52 +41,50 @@ class BlockScreenStates extends State<BlockScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 160),
-                child: Text(
-                  widget.titleText,
-                  style: widget.titleTextStyle,
-                ),
-                alignment: Alignment(0.0, 0.0),
+        body: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 120, left: 30, right: 30),
+              child: Text(
+                widget.titleText,
+                style: widget.titleTextStyle,
               ),
-              Container(child: widget.image),
-              Container(
-                margin: EdgeInsets.only(left: 30, right: 30),
-                child: Text(
-                  widget.middleText,
-                  style: widget.middleTexteStyle,
-                  textAlign: TextAlign.center,
-                ),
+              alignment: Alignment(0.0, 0.0),
+            ),
+            Container(child: widget.image),
+            Container(
+              margin: EdgeInsets.only(left: 30, right: 30),
+              child: Text(
+                widget.middleText,
+                style: widget.middleTexteStyle,
+                textAlign: TextAlign.center,
               ),
-              Container(
-                margin: EdgeInsets.only(left: 70, right: 70, top: 20),
-                child: Text(
-                  widget.bottomText,
-                  style: widget.bottomTextStyle,
-                  textAlign: TextAlign.center,
-                ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 70, right: 70, top: 20),
+              child: Text(
+                widget.bottomText,
+                style: widget.bottomTextStyle,
+                textAlign: TextAlign.center,
               ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: ElevatedButtonTheme(
-                  data: ElevatedButtonThemeData(style: widget.buttonStyle),
-                  child: ElevatedButton(
-                    onPressed: () async {
-                      final PackageInfo _info = await PackageInfo.fromPlatform();
-                      StoreRedirect.redirect(
-                          androidAppId: _info.packageName,
-                          iOSAppId: _info.packageName);
-                    },
-                    child: Text(widget.buttonText),
-                  ),
+            ),
+            Spacer(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButtonTheme(
+                data: ElevatedButtonThemeData(style: widget.buttonStyle),
+                child: ElevatedButton(
+                  onPressed: () async {
+                    final PackageInfo _info = await PackageInfo.fromPlatform();
+                    StoreRedirect.redirect(
+                        androidAppId: _info.packageName,
+                        iOSAppId: _info.packageName);
+                  },
+                  child: Text(widget.buttonText),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -36,15 +36,8 @@ class HomeScreen extends StatelessWidget {
 
   void initBlockVersion(BuildContext context) async {
     final blockApp = BlockApp();
-    blockApp.image(
-        image: Image(
-      image: AssetImage('assets/images/update_alternative.jpg'),
-      fit: BoxFit.fill,
-    ));
-    blockApp.titleText(
-        titleText: 'teste de título',
-        titleStyle: TextStyle(
-            backgroundColor: Colors.red, fontStyle: FontStyle.italic));
+    blockApp.titleText(titleText: 'ukghkasuhgkhhkhdkshdkjshadkhskadhkshdkshadkjshdjkhsjkdhkshdkhdklshkld', 
+                      titleStyle: TextStyle(backgroundColor: Colors.amber));                                                               
     blockApp.button(
         buttonStyle: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)));
