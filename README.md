@@ -23,7 +23,7 @@ and in many cases we need to develop a similar boilerplate solution the proposed
 The features can vary a little bit, but we can consider that is possible to apply something like the Pareto's rule.
 20% of the needs variations are sufficient for 80% of the apps needs.
 
-# Features
+# Features :compass:
 
 - Encapsulated blocked version screen display logic
 - Integration with realtime database to determine the blocked versions
