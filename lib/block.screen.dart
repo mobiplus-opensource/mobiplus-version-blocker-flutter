@@ -41,18 +41,19 @@ class BlockScreenStates extends State<BlockScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Column(
+        body: Stack(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 120, left: 30, right: 30),
-              child: Text(
-                widget.titleText,
-                style: widget.titleTextStyle,
-              ),
-              alignment: Alignment(0.0, 0.0),
+              margin: EdgeInsets.only(top: 110, left: 30, right: 30),
+              child: Text(widget.titleText,
+                  style: widget.titleTextStyle, textAlign: TextAlign.center),
+              alignment: Alignment.topCenter,
             ),
-            Container(child: widget.image),
             Container(
+              alignment: Alignment(0, 0),
+              child: widget.image),
+            Container(
+              alignment: Alignment(0, 0.5),
               margin: EdgeInsets.only(left: 30, right: 30),
               child: Text(
                 widget.middleText,
@@ -62,14 +63,15 @@ class BlockScreenStates extends State<BlockScreen> {
             ),
             Container(
               margin: EdgeInsets.only(left: 70, right: 70, top: 20),
+              alignment: Alignment(0, 0.7),
               child: Text(
                 widget.bottomText,
                 style: widget.bottomTextStyle,
                 textAlign: TextAlign.center,
               ),
             ),
-            Spacer(),
-            Padding(
+            Container(
+              alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButtonTheme(
                 data: ElevatedButtonThemeData(style: widget.buttonStyle),
