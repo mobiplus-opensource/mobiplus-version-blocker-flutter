@@ -43,7 +43,29 @@ dependencies:
 
 ## Super simple to use
 
+```dart
+import 'package:version_blocker_flutter/version_blocker_flutter.dart';
+```
 
+Initialize Version Blocker
+
+```dart
+final blockApp = BlockApp();
+```
+
+You can now use the 'BlockApp()' class to show and manipulate the block screen
+
+```dart
+void initBlockVersion(BuildContext context) async {
+    final blockApp = BlockApp();
+    blockApp.titleText(titleText: 'teste de título', 
+                      titleStyle: TextStyle(backgroundColor: Colors.amber));                                                               
+    blockApp.button(
+        buttonStyle: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)));
+    await blockApp.initVersionBlocker(context);
+  }
+```
 
 # Colaborating
 
