@@ -33,6 +33,11 @@ The features can vary a little bit, but we can consider that is possible to appl
 - Customizable color button and background color
 - Customizable image
 
+# Default block screen
+
+![Screenshot_1641575605](https://user-images.githubusercontent.com/7460007/148581075-c366ad71-04f5-4e27-8b44-1216d55e623b.png)
+
+
 ## Get started
 
 ```pubspec.yaml
@@ -53,7 +58,7 @@ Initialize Version Blocker
 final blockApp = BlockApp();
 ```
 
-You can now use the 'BlockApp()' class to show and manipulate the block screen
+You can now use the 'BlockApp()' class to show and manipulate the block screen properties
 
 ```dart
 void initBlockVersion(BuildContext context) async {
@@ -66,6 +71,17 @@ void initBlockVersion(BuildContext context) async {
     await blockApp.initVersionBlocker(context);
   }
 ```
+# What can be customized?
+
+titleText({TextStyle? titleStyle, String? titleText})
+middleText({String? middleText, TextStyle? middleTextStyle})
+bottomText({String? bottomText, TextStyle? bottomTextStyle})
+button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle})
+image({Image? image})
+
+# Example
+
+[Find here](https://github.com/mobiplus-opensource/mobiplus-version-blocker-flutter/tree/master/sample)
 
 # Colaborating
 
