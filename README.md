@@ -73,11 +73,13 @@ void initBlockVersion(BuildContext context) async {
 ```
 # What can be customized?
 
-titleText({TextStyle? titleStyle, String? titleText})
-middleText({String? middleText, TextStyle? middleTextStyle})
-bottomText({String? bottomText, TextStyle? bottomTextStyle})
-button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle})
-image({Image? image})
+```
+> titleText({TextStyle? titleStyle, String? titleText})
+> middleText({String? middleText, TextStyle? middleTextStyle})
+> bottomText({String? bottomText, TextStyle? bottomTextStyle})
+> button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle})
+> image({Image? image})
+```
 
 # Example
 
