@@ -9,15 +9,13 @@ Version Blocker intends to solve the following problems:
 - To suggest users to update old versions to new ones available.
 - For the developer, offering a simple and faster way of implement and personalize the message of version blocked
 
-## For who is the Version Blocker?
+## For who is the Version Blocker? :thinking:
 
 Developers that don't likes to write duplicated solutions and that wants to invest your time to impacts your app products.
 
 Product's people that needs solutions to manage app versions intelligently.
 
-## What problems the Version Blocker solves?
-
-## Motivation
+## Motivation :robot:
 
 The members of our current team had developed many apps in the last 11 years,
 and in many cases we need to develop a similar boilerplate solution the proposed here.
@@ -105,5 +103,5 @@ void initBlockVersion(BuildContext context) async {
 
 We'd love you to contribute to Version Blocker Flutter.  please read our [Contribution Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md)
 
-## Found a bug?
+## Found a bug? :beetle:
 - open a issue with the description and the way of reproduction. Give preference to adding images.
