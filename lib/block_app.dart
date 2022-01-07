@@ -15,7 +15,7 @@ class BlockApp {
 
   late String _titleText = 'Tá na hora de atualizar seu aplicativo';
   late TextStyle _titleStyle =
-      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold,);
 
   late String _middleText =
       'Fizemos algumas atualizações desde a última vez por aqui.';
@@ -34,7 +34,9 @@ class BlockApp {
 
   late Image _image = Image(
     image: AssetImage('assets/images/update_icon.jpg'),
-    fit: BoxFit.fill,
+    fit: BoxFit.cover,
+    width: 300,
+    height: 300,
   );
 
   void titleText({TextStyle? titleStyle, String? titleText}) {
