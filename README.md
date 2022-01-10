@@ -41,6 +41,7 @@ The features can vary a little bit, but we can consider that is possible to appl
 ```pubspec.yaml
 dependencies:
   version_blocker_flutter: git@github.com:mobiplus-opensource/mobiplus-version-blocker-flutter
+  ref: 2ca2ed2 --last release
 ```
 > this approach was chosen as a temporary workaround as it quickly delivers the delivery with the latest lib version.
 
