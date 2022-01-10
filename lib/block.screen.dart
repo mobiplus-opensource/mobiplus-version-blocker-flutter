@@ -5,6 +5,8 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:store_redirect/store_redirect.dart';
 
 class BlockScreen extends StatefulWidget {
+  final Color backgroundColor;
+
   final String titleText;
   final String middleText;
   final String bottomText;
@@ -29,7 +31,8 @@ class BlockScreen extends StatefulWidget {
     this.bottomTextStyle,
     this.buttonTextStyle,
     this.buttonStyle,
-    this.image,
+    this.image, 
+    this.backgroundColor,
   ) : super();
 
   @override
@@ -41,11 +44,12 @@ class BlockScreenStates extends State<BlockScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: widget.backgroundColor,
         body: LayoutBuilder(builder: (_, constraints) {
           return Column(
             children: [
               Flexible(
-                flex: 2,
+                flex: 1,
                 child: Container(
                   margin: EdgeInsets.only(left: 30, right: 30),
                   child: Text(widget.titleText,

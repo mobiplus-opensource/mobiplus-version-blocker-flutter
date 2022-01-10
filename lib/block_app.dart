@@ -13,6 +13,8 @@ class BlockApp {
 
   static late final BuildContext _context;
 
+  late Color _backgroundColor = Colors.white;
+
   late String _titleText = 'Tá na hora de atualizar seu aplicativo';
   late TextStyle _titleStyle =
       const TextStyle(fontSize: 20, fontWeight: FontWeight.bold,);
@@ -35,6 +37,12 @@ class BlockApp {
   late Image _image = Image(
     image: AssetImage('assets/images/update_icon.jpg'),
   );
+
+  void backGroundColor({Color? backgroundColor}) {
+    if (backgroundColor != null) {
+      _backgroundColor = backgroundColor;
+    }
+  }
 
   void titleText({TextStyle? titleStyle, String? titleText}) {
     if (titleText != null) {
@@ -144,7 +152,8 @@ class BlockApp {
             _bottomTextStyle,
             _buttonTextStyle,
             _buttonStyle,
-            _image);
+            _image,
+            _backgroundColor);
       },
     );
   }
