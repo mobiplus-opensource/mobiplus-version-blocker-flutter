@@ -34,9 +34,6 @@ class BlockApp {
 
   late Image _image = Image(
     image: AssetImage('assets/images/update_icon.jpg'),
-    fit: BoxFit.cover,
-    width: 300,
-    height: 300,
   );
 
   void titleText({TextStyle? titleStyle, String? titleText}) {
