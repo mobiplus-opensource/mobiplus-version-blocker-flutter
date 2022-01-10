@@ -72,12 +72,18 @@ void initBlockVersion(BuildContext context) async {
 # What can be customized?
 
 ```
+> background color(Colors? backgroundColor)
 > titleText({TextStyle? titleStyle, String? titleText})
+> image({Image? image})
 > middleText({String? middleText, TextStyle? middleTextStyle})
 > bottomText({String? bottomText, TextStyle? bottomTextStyle})
 > button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle})
-> image({Image? image})
 ```
+
+## Good pratices
+
+- We recommend the 110 character limit to keep the layout cohesive in the text fields
+
 
 # Example
 
