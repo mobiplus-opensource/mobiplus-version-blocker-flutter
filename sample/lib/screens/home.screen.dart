@@ -35,12 +35,10 @@ class HomeScreen extends StatelessWidget {
   }
 
   void initBlockVersion(BuildContext context) async {
-    final blockApp = BlockApp();
-    blockApp.titleText(titleText: 'ukghkasuhgkhhkhdkshdkjshadkhskadhkshdkshadkjshdjkhsjkdhkshdkhdklshkld', 
-                      titleStyle: TextStyle(backgroundColor: Colors.amber));                                                               
-    blockApp.button(
-        buttonStyle: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)));
+    final blockApp = BlockApp();                                                        
+    // blockApp.button(
+    //     buttonStyle: ButtonStyle(
+    //         backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)));
     await blockApp.initVersionBlocker(context);
   }
 }
