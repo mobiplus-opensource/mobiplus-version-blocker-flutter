@@ -1,0 +1,6 @@
+{
+  "blockedVersions" : {
+    "androidBuildNumber" : 8,
+    "iosBuildNumber" : 6
+  }
+}
