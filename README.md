@@ -33,7 +33,7 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 # Default block screen
 
-![Screenshot_1641575605](https://user-images.githubusercontent.com/7460007/148581075-c366ad71-04f5-4e27-8b44-1216d55e623b.png)
+<img src="https://user-images.githubusercontent.com/7460007/148581075-c366ad71-04f5-4e27-8b44-1216d55e623b.png" width=40% height=40%) >
 
 
 # Get started
