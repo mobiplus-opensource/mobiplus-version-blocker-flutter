@@ -47,9 +47,22 @@ To run the example project you need to have your own [Firebase](https://firebase
 1. Create an iOS app with a bundle ID `com.example` (*only required for the example project, you can use anything for your app*) in [Firebase console](https://console.firebase.google.com) of your project and download generated `GoogleService-Info.plist`. Put it in the `example/ios/Runner` folder. You don't need to open Xcode to do it, it will expect this file in this folder.
 2. Create an Android app with package name `com.example` (*only required for the example project, you can use anything for your app*) in [Firebase console](https://console.firebase.google.com) of your project and download generated `google-services.json`. Put it in the `example/android/app` folder.
 3. Let's create the realtime database structure (*this step is necessary because this lib search and read the configuration in realtime database*)
+4. [Download this Json](https://github.com/mobiplus-opensource/mobiplus-version-blocker-flutter/blob/master/open-source-mobiplus-default-rtdb-export.json) and change the name
 5. In firebase console, go to Realtime Database Section
-6. Click in "Import Json" (Importar o Json)
-7. Retorne ao projeto 
+6. Click in "Import Json"
+7. Import the Json downloaded in step 4
+8. This will be the structure in your realtime database:
+```
+{
+  "blockedVersions" : {
+    "androidBuildNumber" : 8,
+    "iosBuildNumber" : 6
+  }
+}
+```
+9. Now you will be ready to set which version of your app will be locked and will see the lock screen
+
+## Import dependencie
 
 ```pubspec.yaml
 dependencies:
