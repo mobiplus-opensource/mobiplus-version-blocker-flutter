@@ -116,8 +116,6 @@ void initBlockVersion(BuildContext context) async {
 
 [Find here](https://github.com/mobiplus-opensource/mobiplus-version-blocker-flutter/tree/master/sample)
 
-# Colaborating
-
 ## How to run the sample
 
 - Instructions for creating a dev environment:
@@ -131,6 +129,8 @@ void initBlockVersion(BuildContext context) async {
   - Flutter version: 2.5.3
   - Dart Version: 2.14
 - Emulators, Devices
+
+# Colaborating
 
 ## How to contribute
 
