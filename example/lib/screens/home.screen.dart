@@ -35,10 +35,9 @@ class HomeScreen extends StatelessWidget {
   }
 
   void initBlockVersion(BuildContext context) async {
-    final blockApp = BlockApp();                                                        
-    // blockApp.button(
-    //     buttonStyle: ButtonStyle(
-    //         backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)));
+    final blockApp = BlockApp();
+    blockApp.image( image: Image(
+    image: AssetImage('assets/images/10772206.jpg')));                                                       
     await blockApp.initVersionBlocker(context);
   }
 }

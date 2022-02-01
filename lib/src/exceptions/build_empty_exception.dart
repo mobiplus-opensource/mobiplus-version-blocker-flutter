@@ -1,4 +1,5 @@
-import 'package:version_blocker_flutter/exceptions/base_exception.dart';
+
+import 'package:version_blocker_flutter/src/exceptions/base_exception.dart';
 
 class BuildEmptyException extends BaseException {
   BuildEmptyException() : super(_message);

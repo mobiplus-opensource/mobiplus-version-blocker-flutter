@@ -1,3 +1,3 @@
 library version_blocker_flutter;
 
-export 'block_app.dart';
+export 'src/block_app.dart';

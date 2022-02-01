@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:version_blocker_flutter/block.screen.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:version_blocker_flutter/src/block.screen.dart';
 
 class BlockApp {
   late final _child = FirebaseDatabase.instanceFor(app: Firebase.app())
