@@ -33,10 +33,36 @@ The features can vary a little bit, but we can consider that is possible to appl
 
 # Default block screen
 
-![Screenshot_1641575605](https://user-images.githubusercontent.com/7460007/148581075-c366ad71-04f5-4e27-8b44-1216d55e623b.png)
+<img src="https://user-images.githubusercontent.com/7460007/148581075-c366ad71-04f5-4e27-8b44-1216d55e623b.png" width=40% height=40%) >
 
 
-## Get started
+# Get started
+
+## Requirements
+
+`Dart >=2.14.0` and `Flutter >=2.5.3`, [Firebase](https://firebase.google.com) project.
+
+To run the example project you need to have your own [Firebase](https://firebase.google.com) project and depending on the platform you want to:
+
+1. Create an iOS app with a bundle ID `com.example` (*only required for the example project, you can use anything for your app*) in [Firebase console](https://console.firebase.google.com) of your project and download generated `GoogleService-Info.plist`. Put it in the `example/ios/Runner` folder. You don't need to open Xcode to do it, it will expect this file in this folder.
+2. Create an Android app with package name `com.example` (*only required for the example project, you can use anything for your app*) in [Firebase console](https://console.firebase.google.com) of your project and download generated `google-services.json`. Put it in the `example/android/app` folder.
+3. Let's create the realtime database structure (*this step is necessary because this lib search and read the configuration in realtime database*)
+4. [Download this Json](https://github.com/mobiplus-opensource/mobiplus-version-blocker-flutter/blob/master/open-source-mobiplus-default-rtdb-export.json) and change the name
+5. In firebase console, go to Realtime Database Section
+6. Click in "Import Json"
+7. Import the Json downloaded in step 4
+8. This will be the structure in your realtime database:
+```
+{
+  "blockedVersions" : {
+    "androidBuildNumber" : 8,
+    "iosBuildNumber" : 6
+  }
+}
+```
+9. Now you will be ready to set which version of your app will be locked and will see the lock screen
+
+## Import dependencie
 
 ```pubspec.yaml
 dependencies:
@@ -90,8 +116,6 @@ void initBlockVersion(BuildContext context) async {
 
 [Find here](https://github.com/mobiplus-opensource/mobiplus-version-blocker-flutter/tree/master/sample)
 
-# Colaborating
-
 ## How to run the sample
 
 - Instructions for creating a dev environment:
@@ -105,6 +129,8 @@ void initBlockVersion(BuildContext context) async {
   - Flutter version: 2.5.3
   - Dart Version: 2.14
 - Emulators, Devices
+
+# Colaborating
 
 ## How to contribute
 
