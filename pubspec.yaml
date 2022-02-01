@@ -1,6 +1,6 @@
 name: version_blocker_flutter
 description: A new Flutter package project.
-version: 0.2.0+7
+version: 1.0.0+2
 homepage:
 
 environment:
@@ -26,4 +26,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - lib/assets/images/update_icon.jpg
+    - lib/src/assets/images/update_icon.jpg
