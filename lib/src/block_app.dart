@@ -4,23 +4,22 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:version_blocker_flutter/src/block.screen.dart';
+import 'package:version_blocker_flutter/src/screens/block.screen.dart';
 
 class BlockApp {
-  late final _child = FirebaseDatabase.instanceFor(app: Firebase.app())
-      .ref()
-      .child('blockedVersions');
+  late final _child = FirebaseDatabase.instanceFor(app: Firebase.app()).ref().child('blockedVersions');
 
   static late final BuildContext _context;
 
   late Color _backgroundColor = Colors.white;
 
   late String _titleText = 'Tá na hora de atualizar seu aplicativo';
-  late TextStyle _titleStyle =
-      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold,);
+  late TextStyle _titleStyle = const TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
 
-  late String _middleText =
-      'Fizemos algumas atualizações desde a última vez por aqui.';
+  late String _middleText = 'Fizemos algumas atualizações desde a última vez por aqui.';
   late TextStyle _middleTextStyle = const TextStyle(fontSize: 20);
 
   late String _bottomText = 'Clica aí no botão para baixar a nova versão.';
@@ -30,13 +29,12 @@ class BlockApp {
   late TextStyle _buttonTextStyle = const TextStyle(fontSize: 20);
 
   late ButtonStyle _buttonStyle = ButtonStyle(
-      minimumSize: MaterialStateProperty.all<Size>(const Size(320, 50)),
-      backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-      textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 20)));
-
-  late Image _image = Image(
-    image: AssetImage('assets/images/update_icon.jpg'),
+    minimumSize: MaterialStateProperty.all<Size>(const Size(320, 50)),
+    backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+    textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(fontSize: 20)),
   );
+
+  late Image _image = const Image(image: AssetImage('assets/images/update_icon.jpg'));
 
   void backGroundColor({Color? backgroundColor}) {
     if (backgroundColor != null) {
@@ -74,10 +72,7 @@ class BlockApp {
     }
   }
 
-  void button(
-      {String? buttonText,
-      TextStyle? buttonTextStyle,
-      ButtonStyle? buttonStyle}) {
+  void button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle}) {
     if (buttonText != null) {
       _buttonText = buttonText;
     }
@@ -115,9 +110,7 @@ class BlockApp {
     _info = await PackageInfo.fromPlatform();
     final appBuildNumber = int.parse(_info.buildNumber);
 
-    final int checkVersion = Platform.isIOS
-        ? blockData.iosBuildNumber
-        : blockData.androidBuildNumber;
+    final int checkVersion = Platform.isIOS ? blockData.iosBuildNumber : blockData.androidBuildNumber;
     if (appBuildNumber > checkVersion) {
       return false;
     }
@@ -142,18 +135,8 @@ class BlockApp {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        return BlockScreen(
-            _titleText,
-            _middleText,
-            _bottomText,
-            _buttonText,
-            _titleStyle,
-            _middleTextStyle,
-            _bottomTextStyle,
-            _buttonTextStyle,
-            _buttonStyle,
-            _image,
-            _backgroundColor);
+        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText, _titleStyle, _middleTextStyle,
+            _bottomTextStyle, _buttonTextStyle, _buttonStyle, _image, _backgroundColor);
       },
     );
   }

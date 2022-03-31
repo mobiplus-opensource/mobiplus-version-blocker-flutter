@@ -1,4 +1,3 @@
-
 import 'package:version_blocker_flutter/src/exceptions/base_exception.dart';
 
 class BuildWrongFormat extends BaseException {

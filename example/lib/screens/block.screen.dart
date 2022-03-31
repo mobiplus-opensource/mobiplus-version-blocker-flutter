@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:store_redirect/store_redirect.dart';
 
 class BlockScreen extends StatefulWidget {
-  BlockScreen({Key? key}) : super(key: key);
+  const BlockScreen({Key? key}) : super(key: key);
 
   @override
   State<BlockScreen> createState() {
@@ -34,7 +34,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 ),
                 alignment: Alignment(0.0, 0.0),
               ),
-              Container(
+              SizedBox(
                 child: Image(
                   image: AssetImage('assets/images/update_icon.jpg'),
                   fit: BoxFit.fill,
@@ -61,17 +61,12 @@ class BlockScreenStates extends State<BlockScreen> {
                 child: ElevatedButtonTheme(
                   data: ElevatedButtonThemeData(
                       style: ButtonStyle(
-                          minimumSize:
-                              MaterialStateProperty.all<Size>(Size(320, 50)),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                          textStyle: MaterialStateProperty.all<TextStyle>(
-                              TextStyle(fontSize: 20)))),
+                          minimumSize: MaterialStateProperty.all<Size>(Size(320, 50)),
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                          textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 20)))),
                   child: ElevatedButton(
                     onPressed: () {
-                      StoreRedirect.redirect(
-                          androidAppId: "com.android.chrome",
-                          iOSAppId: "535886823");
+                      StoreRedirect.redirect(androidAppId: "com.android.chrome", iOSAppId: "535886823");
                     },
                     child: Text(buttonText),
                   ),

@@ -13,20 +13,17 @@ class HomeScreen extends StatelessWidget {
         return Center(
           child: ElevatedButtonTheme(
             data: ElevatedButtonThemeData(
-                style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all<Size>(Size(320, 50)),
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.red),
-                    textStyle: MaterialStateProperty.all<TextStyle>(
-                        TextStyle(fontSize: 20)))),
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all<Size>(const Size(320, 50)),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(fontSize: 20)),
+              ),
+            ),
             child: ElevatedButton(
               onPressed: () async {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BlockScreen()),
-                );
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const BlockScreen()));
               },
-              child: Text('Me clique'),
+              child: const Text('Me clique'),
             ),
           ),
         );
@@ -36,8 +33,7 @@ class HomeScreen extends StatelessWidget {
 
   void initBlockVersion(BuildContext context) async {
     final blockApp = BlockApp();
-    blockApp.image( image: Image(
-    image: AssetImage('assets/images/10772206.jpg')));                                                       
+    blockApp.image(image: const Image(image: AssetImage('assets/images/10772206.jpg')));
     await blockApp.initVersionBlocker(context);
   }
 }
