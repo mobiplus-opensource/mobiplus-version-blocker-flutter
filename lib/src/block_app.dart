@@ -36,6 +36,24 @@ class BlockApp {
 
   late Widget? _image = const Image(image: AssetImage('assets/images/update_icon.jpg'));
 
+  late Widget? _screen;
+
+  Widget get _defaultScreen => BlockScreen(
+        titleText: _titleText,
+        middleText: _middleText,
+        bottomText: _bottomText,
+        buttonText: _buttonText,
+        titleTextStyle: _titleStyle,
+        middleTexteStyle: _middleTextStyle,
+        bottomTextStyle: _bottomTextStyle,
+        buttonTextStyle: _buttonTextStyle,
+        buttonStyle: _buttonStyle,
+        image: _image,
+        backgroundColor: _backgroundColor,
+      );
+
+  void setScreen([Widget? screen]) => _screen = screen;
+
   void backGroundColor([Color? backgroundColor]) => _backgroundColor = backgroundColor;
 
   void titleText({TextStyle? titleStyle, String? titleText}) {
@@ -103,21 +121,7 @@ class BlockApp {
         ),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      builder: (context) {
-        return BlockScreen(
-          titleText: _titleText,
-          middleText: _middleText,
-          bottomText: _bottomText,
-          buttonText: _buttonText,
-          titleTextStyle: _titleStyle,
-          middleTexteStyle: _middleTextStyle,
-          bottomTextStyle: _bottomTextStyle,
-          buttonTextStyle: _buttonTextStyle,
-          buttonStyle: _buttonStyle,
-          image: _image,
-          backgroundColor: _backgroundColor,
-        );
-      },
+      builder: (context) => _screen == null ? _defaultScreen : _screen!,
     );
   }
 }
