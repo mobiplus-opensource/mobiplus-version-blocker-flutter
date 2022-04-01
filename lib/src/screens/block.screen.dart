@@ -53,6 +53,7 @@ class BlockScreenStates extends State<BlockScreen> {
                 child: Padding(
                   padding: _paddingHorizontal,
                   child: ElevatedButton(
+                    style: widget.buttonStyle,
                     onPressed: () async {
                       final PackageInfo _info = await PackageInfo.fromPlatform();
                       StoreRedirect.redirect(androidAppId: _info.packageName, iOSAppId: _info.packageName);
