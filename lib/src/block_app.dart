@@ -34,7 +34,7 @@ class BlockApp {
     textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(fontSize: 20)),
   );
 
-  late Image? _image = const Image(image: AssetImage('assets/images/update_icon.jpg'));
+  late Widget? _image = const Image(image: AssetImage('assets/images/update_icon.jpg'));
 
   void backGroundColor([Color? backgroundColor]) => _backgroundColor = backgroundColor;
 
@@ -59,7 +59,7 @@ class BlockApp {
     _buttonStyle = buttonStyle;
   }
 
-  void image([Image? image]) => _image = image;
+  void image([Widget? image]) => _image = image;
 
   Future<bool> initVersionBlocker(BuildContext buildContext) {
     _context = buildContext;
