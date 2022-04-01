@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:store_redirect/store_redirect.dart';
 import 'package:version_blocker_flutter/src/screens/block.screen.dart';
 
 class BlockApp {
@@ -37,6 +38,10 @@ class BlockApp {
   late Widget? _image = const Image(image: AssetImage('assets/images/update_icon.jpg'));
 
   late Widget? _screen;
+
+  PackageInfo? _packageInfo;
+
+  Future<PackageInfo> get _infos async => _packageInfo ?? (_packageInfo = await PackageInfo.fromPlatform());
 
   Widget get _defaultScreen => BlockScreen(
         titleText: _titleText,
@@ -78,6 +83,9 @@ class BlockApp {
   }
 
   void image([Widget? image]) => _image = image;
+
+  void redirectToStore() async =>
+      StoreRedirect.redirect(androidAppId: (await _infos).packageName, iOSAppId: (await _infos).packageName);
 
   Future<bool> initVersionBlocker(BuildContext buildContext) {
     _context = buildContext;
