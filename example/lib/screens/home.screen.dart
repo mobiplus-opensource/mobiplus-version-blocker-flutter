@@ -7,33 +7,29 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    initBlockVersion(context);
-    return MaterialApp(
-      home: Builder(builder: (context) {
-        return Center(
-          child: ElevatedButtonTheme(
-            data: ElevatedButtonThemeData(
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all<Size>(const Size(320, 50)),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(fontSize: 20)),
-              ),
-            ),
-            child: ElevatedButton(
-              onPressed: () async {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const BlockScreen()));
-              },
-              child: const Text('Me clique'),
-            ),
-          ),
-        );
-      }),
+    // initBlockVersion(context);
+    return const MaterialApp(
+      home: BlockScreen(
+        titleText: "Tá na hora de atualizar seu aplicativo",
+        middleText: "meio",
+        bottomText: "bootom",
+        buttonText: "button",
+        titleTextStyle: TextStyle(),
+        middleTexteStyle: TextStyle(),
+        bottomTextStyle: TextStyle(),
+        buttonTextStyle: TextStyle(),
+        buttonStyle: ButtonStyle(),
+        image: FlutterLogo(
+          size: 100,
+        ),
+        backgroundColor: Colors.white,
+      ),
     );
   }
 
   void initBlockVersion(BuildContext context) async {
     final blockApp = BlockApp();
-    blockApp.image(image: const Image(image: AssetImage('assets/images/10772206.jpg')));
+    blockApp.image(const Image(image: AssetImage('assets/images/10772206.jpg')));
     await blockApp.initVersionBlocker(context);
   }
 }

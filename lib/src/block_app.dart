@@ -11,86 +11,55 @@ class BlockApp {
 
   static late final BuildContext _context;
 
-  late Color _backgroundColor = Colors.white;
+  late Color? _backgroundColor = Colors.white;
 
-  late String _titleText = 'Tá na hora de atualizar seu aplicativo';
-  late TextStyle _titleStyle = const TextStyle(
+  late String? _titleText = 'Tá na hora de atualizar seu aplicativo';
+  late TextStyle? _titleStyle = const TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
 
-  late String _middleText = 'Fizemos algumas atualizações desde a última vez por aqui.';
-  late TextStyle _middleTextStyle = const TextStyle(fontSize: 20);
+  late String? _middleText = 'Fizemos algumas atualizações desde a última vez por aqui.';
+  late TextStyle? _middleTextStyle = const TextStyle(fontSize: 20);
 
-  late String _bottomText = 'Clica aí no botão para baixar a nova versão.';
-  late TextStyle _bottomTextStyle = const TextStyle(fontSize: 20);
+  late String? _bottomText = 'Clica aí no botão para baixar a nova versão.';
+  late TextStyle? _bottomTextStyle = const TextStyle(fontSize: 20);
 
-  late String _buttonText = 'ATUALIZAR';
-  late TextStyle _buttonTextStyle = const TextStyle(fontSize: 20);
+  late String? _buttonText = 'ATUALIZAR';
+  late TextStyle? _buttonTextStyle = const TextStyle(fontSize: 20);
 
-  late ButtonStyle _buttonStyle = ButtonStyle(
+  late ButtonStyle? _buttonStyle = ButtonStyle(
     minimumSize: MaterialStateProperty.all<Size>(const Size(320, 50)),
     backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
     textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(fontSize: 20)),
   );
 
-  late Image _image = const Image(image: AssetImage('assets/images/update_icon.jpg'));
+  late Image? _image = const Image(image: AssetImage('assets/images/update_icon.jpg'));
 
-  void backGroundColor({Color? backgroundColor}) {
-    if (backgroundColor != null) {
-      _backgroundColor = backgroundColor;
-    }
-  }
+  void backGroundColor([Color? backgroundColor]) => _backgroundColor = backgroundColor;
 
   void titleText({TextStyle? titleStyle, String? titleText}) {
-    if (titleText != null) {
-      _titleText = titleText;
-    }
-
-    if (titleStyle != null) {
-      _titleStyle = titleStyle;
-    }
+    _titleText = titleText;
+    _titleStyle = titleStyle;
   }
 
   void middleText({String? middleText, TextStyle? middleTextStyle}) {
-    if (middleText != null) {
-      _middleText = middleText;
-    }
-
-    if (middleTextStyle != null) {
-      _middleTextStyle = middleTextStyle;
-    }
+    _middleText = middleText;
+    _middleTextStyle = middleTextStyle;
   }
 
   void bottomText({String? bottomText, TextStyle? bottomTextStyle}) {
-    if (bottomText != null) {
-      _bottomText = bottomText;
-    }
-
-    if (bottomTextStyle != null) {
-      _bottomTextStyle = bottomTextStyle;
-    }
+    _bottomText = bottomText;
+    _bottomTextStyle = bottomTextStyle;
   }
 
   void button({String? buttonText, TextStyle? buttonTextStyle, ButtonStyle? buttonStyle}) {
-    if (buttonText != null) {
-      _buttonText = buttonText;
-    }
-
-    if (buttonTextStyle != null) {
-      _buttonTextStyle = buttonTextStyle;
-    }
-
-    if (buttonStyle != null) {
-      _buttonStyle = buttonStyle;
-    }
+    _buttonText = buttonText;
+    _buttonTextStyle = buttonTextStyle;
+    _buttonStyle = buttonStyle;
   }
 
-  void image({Image? image}) {
-    if (image != null) {
-      _image = image;
-    }
-  }
+  void image([Image? image]) => _image = image;
 
   Future<bool> initVersionBlocker(BuildContext buildContext) {
     _context = buildContext;
@@ -135,8 +104,19 @@ class BlockApp {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        return BlockScreen(_titleText, _middleText, _bottomText, _buttonText, _titleStyle, _middleTextStyle,
-            _bottomTextStyle, _buttonTextStyle, _buttonStyle, _image, _backgroundColor);
+        return BlockScreen(
+          titleText: _titleText,
+          middleText: _middleText,
+          bottomText: _bottomText,
+          buttonText: _buttonText,
+          titleTextStyle: _titleStyle,
+          middleTexteStyle: _middleTextStyle,
+          bottomTextStyle: _bottomTextStyle,
+          buttonTextStyle: _buttonTextStyle,
+          buttonStyle: _buttonStyle,
+          image: _image,
+          backgroundColor: _backgroundColor,
+        );
       },
     );
   }

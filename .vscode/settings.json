@@ -1,0 +1,45 @@
+{
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.applyStylizerPattern",
+      "sequence": ["extension.flutterStylizer", "editor.action.organizeImports"]
+    }
+  ],
+  "commandOnAllFiles.excludeFolders": [
+    "node_modules",
+    "out",
+    ".vscode-test",
+    "media",
+    ".git",
+    ".fvm",
+    "android",
+    "ios",
+    "build",
+    "dist",
+    "coverage",
+    "scripts",
+    ".dart_tool"
+  ],
+  "commandOnAllFiles.commands": {
+    "Aplicar padrão em todo o projeto": {
+      "command": "multiCommand.applyStylizerPattern",
+      "includeFileExtensions": [".dart"]
+    }
+  },
+  "dart.lineLength": 120,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [120],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false,
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  }
+}
